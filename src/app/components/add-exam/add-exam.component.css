@@ -1,0 +1,29 @@
+.container {
+  padding: 4%;
+  margin-top: 2%;
+}
+.card {
+  width: 80%;
+}
+.form-text {
+  color: red;
+  margin-bottom: 4%;
+}
+
+.r-container {
+  margin: 5% 0% 5% 0%;
+}
+
+.content{
+  margin-bottom: 3%;
+}
+
+.content-btn {
+  margin-top: 6%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.content-btn button{
+  width: 50%;
+}

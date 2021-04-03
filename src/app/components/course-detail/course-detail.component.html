@@ -1,0 +1,103 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="">
+      <i class="fa fa-arrow-left"></i> /Home
+    </a>
+</ul>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="row title">
+      <div>
+        <h1>{{courseName}}</h1>
+        <h4>{{courseId}}</h4>
+        <hr>
+        <h6>Semester {{term}}/{{year}}</h6>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="r-container">
+
+    <div class="title">
+      <div>
+        <h4>Exam lists</h4>
+      </div>
+      <div>
+        <button class="btn btn-primary" (click)="gotoAddExam()">New Exam Type</button>
+      </div>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Exam Type</th>
+          <th>Full Score</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let exam of exams; let i=index">
+
+        <tr>
+          <th>{{i+1}}</th>
+          <td>{{exam.name}}</td>
+          <td>{{exam.score}}</td>
+          <td>
+            <div class="action-content">
+              <div>
+                <button class="btn btn-danger" (click)="delExamType(exam.name)">Del</button>
+              </div>
+              <div>
+                <button class="btn btn-info" (click)="gotoEditExamType(exam.name)">Edit</button>
+              </div>
+              <div>
+                <button class="btn btn-secondary" (click)="gotoExamDetail(exam.name)">View</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="not-found" *ngIf="notFound">
+    Not Found
+  </div>
+
+</div>
+
+<div class="r-container">
+
+  <div class="title">
+    <div>
+      <h4>Register lists</h4>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Student ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let std of students; let i=index">
+
+      <tr>
+        <th>{{i+1}}</th>
+        <td>{{std.stdNo}}</td>
+        <td>{{std.fname}}</td>
+        <td>{{std.lname}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

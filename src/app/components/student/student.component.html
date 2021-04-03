@@ -1,0 +1,51 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/">
+      <i class="fa fa-arrow-left"></i> /Home
+    </a>
+</ul>
+
+<div class="container">
+
+  <div class="addstudent">
+    <button class="btn btn-info" routerLink='/addStudent'>
+      Add Student
+    </button>
+  </div>
+
+  <div class="row title">
+    <h2>Student list</h2>
+  </div>
+
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Student id</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>year</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let std of students; let i=index">
+        <tr>
+          <th>{{i+1}}</th>
+          <td>{{std.studentId}}</td>
+          <td>{{std.firstname}}</td>
+          <td>{{std.lastname}}</td>
+          <td>{{std.year}}</td>
+          <td>
+            <div>
+              <div>
+                <button class="btn btn-danger">Delete</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

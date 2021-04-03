@@ -1,0 +1,48 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" (click)="goCourseDetail()">
+      <i class="fa fa-arrow-left"></i> /CourseDetail
+    </a>
+</ul>
+
+<div class="card container">
+
+  <h5>Exam Info</h5>
+  <div class="row r-container">
+    <form [formGroup]="examInfoForm" (ngSubmit)="submit()">
+      <div class="content">
+        <label >Exam Type</label>
+        <input type="text" formControlName="name" class="form-control" placeholder="Example Quiz1">
+        <div class="form-text" *ngIf="examInfoForm.controls.name.errors?.required">
+          * Exam Type required
+        </div>
+      </div>
+      <div class="content">
+        <label >Full Score</label>
+        <input type="number" formControlName="score" class="form-control">
+        <div class="form-text" *ngIf="examInfoForm.controls.score.errors?.required">
+          * score required
+        </div>
+        <div class="form-text" *ngIf="examInfoForm.controls.score.errors?.min">
+          Score should more than 0
+        </div>
+        <div class="form-text" *ngIf="examInfoForm.controls.score.errors?.max">
+          Score should less than 100
+        </div>
+      </div>
+      <div class="content">
+        <label >Description</label>
+        <input type="text" formControlName="description" class="form-control">
+        <div class="form-text" *ngIf="examInfoForm.controls.description.errors?.required">
+          * Description required
+        </div>
+      </div>
+
+      <div class="content-btn">
+        <button type="submit" class="btn btn-primary" [disabled]="!examInfoForm.valid">Submit</button>
+      </div>
+
+    </form>
+  </div>
+
+</div>

@@ -1,0 +1,20 @@
+
+.title {
+  font-size: 50px;
+  margin: 5% 0% 5% 0%;
+}
+
+
+.form-text {
+  color: red;
+}
+
+button {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.register-link {
+  text-align: center;
+  text-decoration: underline;
+}

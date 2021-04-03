@@ -1,0 +1,4 @@
+.container .btn-addcourse {
+    display: flex;
+    justify-content: flex-end;
+}

@@ -1,0 +1,47 @@
+.user-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.not-found {
+  display: flex;
+  justify-content: center;
+}
+
+.not-found div{
+  text-align: center;
+}
+
+.addCourse-container {
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+.addCourse-container div {
+  margin-left: 2%;
+}
+
+.search-container {
+  margin: 5% 0% 5% 0%;
+}
+
+.course-container {
+  margin: 5% 0% 7% 0%;
+}
+
+.course-container .title{
+  margin-bottom: 2%;
+}
+
+table {
+  text-align: center;
+}
+
+.course-container table .action-content{
+  display: flex;
+}
+
+.course-container table .action-content div{
+  margin-left: 3%;
+}

@@ -1,0 +1,46 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" (click)="gotoCourseDetail()">
+      <i class="fa fa-arrow-left"></i> /courseDetail
+    </a>
+</ul>
+
+<div class="container">
+  <div class="card title">
+    <h3>{{examName}}</h3>
+    <p>{{examType.description}}</p>
+  </div>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Student Id</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Score</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let ex of examDetails;let i=index">
+        <tr>
+          <th>{{i+1}}</th>
+          <td>{{ex.stdId}}</td>
+          <td>{{ex.fname}}</td>
+          <td>{{ex.lname}}</td>
+          <td>{{ex.score}}/{{examType.score}}</td>
+          <td>
+            <div *ngIf="ex.statusScan">เคยสแกนแล้ว</div>
+            <div *ngIf="!ex.statusScan">ไม่เคยสแกน</div>
+          </td>
+          <td>
+            <div class="action-content">
+              <button class="btn btn-info" (click)="gotoExamScore(ex.stdId)">Edit</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

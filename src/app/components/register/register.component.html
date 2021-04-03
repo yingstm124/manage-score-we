@@ -1,0 +1,68 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/login">
+      <i class="fa fa-arrow-left"></i> /Login
+    </a>
+</ul>
+
+<div class="container">
+
+  <div class="row title">Register</div>
+
+  <div class="row">
+    <form [formGroup]="registerForm" (ngSubmit)="submit()">
+      <h4>User Acoount</h4>
+      <hr>
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input formControlName="username" type="text" class="form-control">
+        <div class="form-text" *ngIf="registerForm.controls.username.errors?.required">
+          * Username required
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input formControlName="email" type="email" class="form-control">
+        <div class="form-text" *ngIf="registerForm.controls.email.errors?.required">
+          * Email required
+        </div>
+        <div class="form-text" *ngIf="registerForm.controls.email.errors?.email">
+          Not Email format
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input formControlName="password" type="password" class="form-control">
+        <div class="form-text" *ngIf="registerForm.controls.password.errors?.required">
+          * Password required
+        </div>
+      </div>
+
+      <div class="mb-3">
+
+        <h4>Teacher Info</h4>
+        <hr>
+        <label for="exampleInputPassword1" class="form-label">First Name</label>
+        <input formControlName="firstname" type="text" class="form-control">
+        <div class="form-text" *ngIf="registerForm.controls.firstname.errors?.required">
+          * firstname required
+        </div>
+
+        <label for="exampleInputPassword1" class="form-label">Last Name</label>
+        <input formControlName="lastname" type="text" class="form-control">
+        <div class="form-text" *ngIf="registerForm.controls.lastname.errors?.required">
+          * lastname required
+        </div>
+      </div>
+
+      <div>
+        <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Register</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+

@@ -1,0 +1,34 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" (click)="goExamDetail()">
+      <i class="fa fa-arrow-left"></i> /courseDetail
+    </a>
+</ul>
+
+<div class="card">
+  <form [formGroup]="editExamScoreForm" (ngSubmit)="submit()">
+
+    <div>
+      <label>Student : {{stdId}}</label>
+    </div>
+
+    <div class="form-group">
+      <label>Score</label>
+      <input formControlName="score" type="number" class="form-control">
+      <small id="msg-err"  *ngIf="editExamScoreForm.controls.score.errors?.required">
+        Score Require
+      </small>
+      <small id="msg-err" *ngIf="editExamScoreForm.controls.score.errors?.min">
+        Score should more than 0
+      </small>
+      <small id="msg-err" *ngIf="editExamScoreForm.controls.score.errors?.max">
+        Score should less than 100
+      </small>
+    </div>
+
+
+    <div class="form-group btngroup">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>

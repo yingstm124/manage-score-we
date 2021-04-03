@@ -1,0 +1,40 @@
+<div class="container">
+
+  <div class="btn-addcourse">
+    <button class="btn btn-info" routerLink='/addCourse'>
+      Add Course
+    </button>
+  </div>
+
+  <div class="row title">
+    <h2>Course list</h2>
+  </div>
+
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Course id</th>
+          <th>Course Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let c of courses; let i=index">
+        <tr>
+          <th>{{i+1}}</th>
+          <td>{{c.courseId}}</td>
+          <td>{{c.courseName}}</td>
+          <td>
+            <div>
+              <div>
+                <button class="btn btn-danger" (click)="removeCourse(c.courseId)">Delete</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

@@ -1,0 +1,13 @@
+.card {
+  padding: 3%;
+  margin: 5% 15% 5% 15%;
+}
+
+.btngroup {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#msg-err {
+  color: red;
+}

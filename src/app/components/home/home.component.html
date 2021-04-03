@@ -1,0 +1,79 @@
+<div class="container">
+
+  <div class="user-container">
+
+    <div>
+      <div>
+        <i class="fa fa-user">User Info : </i>
+      </div>
+      <div>
+        <span>Email : </span> {{currentUserEmail}}
+      </div>
+      <div>
+        <span>UserName : </span> {{currentUserName}}
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="search-container">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Enter Course Id or Course Name" [(ngModel)]="searchCourses">
+      <button class="btn btn-success">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="course-container">
+
+    <!-- <div class="not-found" *ngIf="notFound">
+      <div>
+        <h3>404</h3>
+        <p>Not Found Course Detail</p>
+      </div>
+    </div> -->
+
+    <div>
+      <div class="title">
+        <h4>Exam Info</h4>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th>Semester</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let c of courses | filter:searchCourses; let i=index">
+
+          <tr>
+            <th>{{i+1}}</th>
+            <td>{{c.courseId}}</td>
+            <td>{{c.courseName}}</td>
+            <td>{{c.term}}/{{c.year}} </td>
+            <td>
+              <div class="action-content">
+                <button class="btn btn-info" (click)="gotoCourseDetail(c.courseName,c.courseId, c.exNo, c.term, c.year)">Select</button>
+              </div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+
+    <div class="not-found" *ngIf="notFound">
+      Not Found
+    </div>
+
+  </div>
+
+</div>
+
+

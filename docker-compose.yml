@@ -1,0 +1,36 @@
+version: '3.9'
+services:
+
+  nginx:
+    image: nginx:stable-alpine
+    container_name: lemp_nginx
+    restart: always
+    volumes:
+      - ./src/:/var/www/html
+      - ./nginx-config/nginx.conf:/etc/nginx/conf/nginx.conf:ro
+      - ./nginx-config/conf.d:/etc/nginx/conf.d:ro
+    volumes:
+      -
+    ports:
+      - 8091:80
+
+  db:
+    image: mysql
+    container_name: lemp_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "123456"
+    ports:
+      - "6033:3306"
+    volumes:
+      - ./mysql/initdb/:/docker-entrypoint-initdb.d
+      - ./mysql/data/:/var/lib/mysql
+      # - ./data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: pma
+    links:
+      - db
+    restart: always
+    ports:
+      - 8086:80

@@ -1,0 +1,39 @@
+<div class="container">
+
+  <div class="row title">Login</div>
+
+  <div class="row">
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input formControlName="email" type="email" class="form-control" aria-describedby="msg-err-email">
+        <div id="msg-err-email" class="form-text" *ngIf="loginForm.controls.email.errors?.required">
+          Email Required
+        </div>
+        <div id="msg-err-email" class="form-text" *ngIf="loginForm.controls.email.errors?.email">
+          Not Email format
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input formControlName="password" type="password" class="form-control" id="msg-err-password">
+        <div id="msg-err-password" class="form-text" *ngIf="loginForm.controls.password.errors?.required">
+          Password required
+        </div>
+      </div>
+
+      <div>
+        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+      </div>
+
+      <div class="register-link">
+        <a routerLink='/register'>Register</a>
+      </div>
+
+    </form>
+  </div>
+
+
+</div>

@@ -1,0 +1,8 @@
+.container .addstudent{
+  display: flex;
+  justify-content: flex-end;
+}
+
+table {
+  text-align: center;
+}

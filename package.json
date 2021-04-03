@@ -8,15 +8,17 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --prod",
     "postinstall": "ng build --outputpath-path angularapp --aot --prod"
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "^0.1100.7",
     "@angular/animations": "~11.0.3",
     "@angular/cdk": "^11.2.5",
+    "@angular/cli": "^11.0.7",
     "@angular/common": "~11.0.3",
     "@angular/compiler": "~11.0.3",
+    "@angular/compiler-cli": "~11.0.3",
     "@angular/core": "~11.0.3",
     "@angular/forms": "~11.0.3",
     "@angular/localize": "~11.0.3",
@@ -31,16 +33,14 @@
     "bootstrap-autocomplete": "^2.3.7",
     "express": "^4.17.1",
     "font-awesome": "^4.7.0",
+    "heroku": "^7.51.0",
     "jquery": "^3.6.0",
     "ng2-search-filter": "^0.5.1",
     "path": "^0.12.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2",
-    "@angular/cli": "^11.0.7",
-    "@angular/compiler-cli": "~11.0.3",
-    "@angular-devkit/build-angular": "^0.1100.7",
-    "typescript": "~4.0.2"
+    "typescript": "~4.0.2",
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@types/jasmine": "~3.6.0",

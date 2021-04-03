@@ -15,7 +15,7 @@ export class ServerService {
   }
 
   public getBackendService():string {
-    return 'https://backend-score-web-ja.herokuapp.com/api'
+    return 'https://db-score-web.herokuapp.com/api'
   }
 
 }
